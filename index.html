@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="web_author" content="Amir Arefi">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>The Youth Calculator</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="fadeIn">
+
+    <div class="container">
+        <div class="wrapper">
+            <section id="header">
+                <p class="title text-left">The Youth Calculator</p>
+            </section> <!-- #header -->
+            <div class="padding-fix">
+                <form>
+                    <div id="calendar">
+                        <p class="text-left">Enter Your Date of Birth</p>
+                        <p><input type="text" name="bday" value="1976/01/08" id="dob"></p>
+                    </div>
+                    <div id="gender">
+                        <p class="text-left">Select Your Gender</p>
+                        <div class="text-left gender-choices">
+                            <input checked id="radioBttn1" name="sex" type="radio" value="male"><label for="radioBttn1">Male</label>
+                            <input id="radioBttn2" name="sex" type="radio" value="female"><label for="radioBttn2">Female</label>
+                        </div>
+                    </div>
+                    
+                    <div id="region-section" class="country text-left">
+                        <p class="text-left">Which region have you lived most of your life&#63;</p>
+                        <select id="region" name="regions">
+                            <option value="US">
+                                US
+                            </option>
+                            <option value="Europe">
+                                Europe
+                            </option>
+                            <option value="Americas">
+                                Americas
+                            </option>
+                            <option value="Africa">
+                                Africa
+                            </option>
+                            <option value="Japan">
+                                Japan
+                            </option>
+                            <option value="ANZ">
+                                Australia/NZ
+                            </option>
+                            <option value="Korea">
+                                South Korea
+                            </option>
+                            <option value="Pacific">
+                                Western Pacific
+                            </option>
+                            <option value="SeAsia">
+                                South East Asia
+                            </option>
+                            <option value="MedEast">
+                                Eastern Mediterranean
+                            </option>
+                        </select>
+                    </div> <!-- .country -->
+
+                    <div class=" text-left calc text-center">
+                        <input class= "btn btn-custom" id="calcBttn" type="button" value="Calculate">
+                    </div>
+
+                </form>
+
+                <section id="text-info">
+                    <div class="text-center" id="ageDisplayMsg"></div>
+                    <div class="fadeIn" id="lifeMsg"></div>
+                </section>
+
+                <section id="life-bar">
+                    <div class="meter">
+                        <span id="lifebar1" style="width: 0%">
+                            <span id="txt1"></span>
+                        </span>
+                        <span id="lifebar2" style="width: 0%">
+                            <span id="txt2"></span>
+                        </span>
+                        <span id="lifebar3" style="width: 0%">
+                            <span id="txt3"></span>
+                        </span>
+                    </div>
+                </section>
+            </div> <!-- .padding-fix -->
+        </div> <!-- .wrapper -->
+    </div> <!-- .container -->
+
+    <div class="container slide">
+        <footer>
+            <p>Results are rounded and are estimates only.Calculations are based on WHO age expectancy data for various regions published in 2013. Ages of 45, 55 and 60 have been used as benchmarks for the onset of &#39;older&#39; age for Africa, Middle east/South East Asia and the rest of the world respectively based on published WHO resources and other publications.©2015 A.A</p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/calculator.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $( "#dob" ).datepicker({
+                changeMonth:true,
+                changeYear:true,
+                minDate:"-40Y",
+                maxDate:"-5Y",
+                yearRange: "-40:+0",
+                dateFormat: "yy/mm/dd",
+                defaultDate:"-40Y",
+            });
+        });
+    </script>
+    <!-- JAVASCRIPT - END -->
+
+</body>
+</html>
